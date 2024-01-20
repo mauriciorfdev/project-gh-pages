@@ -17,7 +17,18 @@
 <body>
     <h1 style="text-decoration:underline;">H1 FOR GH PAGES</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ex velit esse quia laudantium est ut optio hic. Perspiciatis libero adipisci incidunt dolorem saepe nobis corrupti laudantium itaque quod, sed, temporibus magni quae modi natus, molestiae sequi fuga quidem? Deleniti in quidem quam. Dignissimos cum nesciunt voluptatum rem, aut ducimus obcaecati dicta vero amet reiciendis accusamus beatae ex distinctio architecto quo? Ea pariatur temporibus maxime corrupti natus maiores repellat. Recusandae vitae nesciunt iusto laborum eius odit sunt, doloribus culpa accusantium rerum rem consectetur ipsa corporis maxime sint voluptate. Eum voluptatibus nulla tempore. Quo eum alias sunt nemo officia, iste quas?</p>
-    <button>Click para cargar json...</button>
-    <p id="p1-jsonExample1"></p>
+    <button onclick="cargarJson()">Click para cargar json...</button>
+    <p id="p1"></p>
+    <script>
+        cargarJson = function(){
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function(){
+                let p1 = document.getElementById('p1');
+                p1.innerHTML = xhr.responseText;
+            }
+            xhr.open('GET', '/jsons/user.json')
+            xhr.send();
+        }
+    </script>
 </body>
 </html>
